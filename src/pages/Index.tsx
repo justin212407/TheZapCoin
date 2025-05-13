@@ -189,7 +189,7 @@ const Index = () => {
                 <div className="relative h-60 mb-8 rounded-xl overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-solana-purple/20 to-solana-green/20 z-10"></div>
                   <img
-                    src="/lovable-uploads/9ac2d630-a0ef-4544-948b-e78211750c60.png"
+                    src="/images/9ac2d630-a0ef-4544-948b-e78211750c60.png"
                     alt="Solar and Wind Energy Farm"
                     className="object-cover w-full h-full"
                   />
