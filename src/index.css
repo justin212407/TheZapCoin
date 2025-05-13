@@ -1,0 +1,189 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 228 16% 12%;
+    --foreground: 210 40% 98%;
+
+    --card: 228 15% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 228 15% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 267 100% 64%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 157 84% 50%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 157 84% 50%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 267 100% 64%;
+
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-zap-dark text-foreground font-sans;
+    background-image:
+      radial-gradient(at 40% 20%, rgba(153, 69, 255, 0.15) 0px, transparent 50%),
+      radial-gradient(at 80% 70%, rgba(20, 241, 149, 0.12) 0px, transparent 50%),
+      radial-gradient(at 60% 40%, rgba(153, 69, 255, 0.1) 0px, transparent 50%);
+  }
+
+  .interactive-bg {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .interactive-bg::before {
+    content: '';
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    background: radial-gradient(circle, rgba(153, 69, 255, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .interactive-bg.active::before {
+    opacity: 1;
+  }
+
+  .glow-effect {
+    position: relative;
+  }
+
+  .glow-effect::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, rgba(153, 69, 255, 0.5), rgba(20, 241, 149, 0.5));
+    border-radius: inherit;
+    z-index: -1;
+    filter: blur(15px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .glow-effect:hover::after {
+    opacity: 0.7;
+  }
+
+  .scroll-animation {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .scroll-animation.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #9945FF 0%, #14F195 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% auto;
+    animation: gradient-shift 15s ease infinite;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - 1rem));
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+    width: calc(250% + 1rem);
+  }
+
+  /* Wallet Button Styles */
+  .wallet-adapter-button {
+    background-color: #9945FF !important;
+    border: none !important;
+    color: white !important;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 600 !important;
+    border-radius: 0.5rem !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.875rem !important;
+    transition: all 0.2s ease !important;
+    height: auto !important;
+    line-height: normal !important;
+    cursor: pointer !important;
+  }
+
+  .wallet-adapter-button-start-icon {
+    margin-right: 0.5rem !important;
+  }
+
+  .wallet-adapter-button:hover {
+    background-color: #8035e0 !important;
+    box-shadow: 0 0 15px rgba(153, 69, 255, 0.5) !important;
+  }
+
+  .wallet-adapter-button:not([disabled]):hover {
+    background-color: #8035e0 !important;
+  }
+
+  .wallet-adapter-dropdown {
+    display: flex;
+    justify-content: center;
+  }
+
+  .wallet-adapter-dropdown-list {
+    background-color: #1a1b23 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 0.5rem !important;
+    z-index: 1000 !important;
+    position: absolute !important;
+    margin-top: 4px !important;
+  }
+
+  .wallet-adapter-dropdown-list-item {
+    color: white !important;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500 !important;
+    border-radius: 0.25rem !important;
+    padding: 0.5rem 1rem !important;
+    cursor: pointer !important;
+  }
+
+  .wallet-adapter-dropdown-list-item:hover {
+    background-color: rgba(153, 69, 255, 0.2) !important;
+  }
+}
+

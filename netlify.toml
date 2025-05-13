@@ -1,0 +1,14 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Handle SPA routing (React Router)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Environment variables for production
+[context.production.environment]
+  VITE_SOLANA_NETWORK = "testnet"
+  VITE_PROGRAM_ID = "2dv7D1h2w5QcvMEnB6qqFYSudmb31uyvTowBvLoBcUN9"

@@ -1,0 +1,43 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { SolanaWalletProvider, WalletButton } from './components/wallet';
+import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
+
+// Import your existing components
+import Home from './pages/Home';
+import HowItWorks from './pages/HowItWorks';
+import Marketplace from './pages/Marketplace';
+
+function App() {
+  return (
+    <SolanaWalletProvider network={WalletAdapterNetwork.Testnet}>
+      <Router>
+        <div className="app">
+          <header className="app-header">
+            <nav className="main-nav">
+              {/* Your existing navigation */}
+              <div className="wallet-container">
+                <WalletButton network="testnet" />
+              </div>
+            </nav>
+          </header>
+
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/how-it-works" element={<HowItWorks />} />
+              <Route path="/marketplace" element={<Marketplace />} />
+              {/* Add other routes as needed */}
+            </Routes>
+          </main>
+
+          <footer>
+            {/* Your existing footer */}
+          </footer>
+        </div>
+      </Router>
+    </SolanaWalletProvider>
+  );
+}
+
+export default App;
