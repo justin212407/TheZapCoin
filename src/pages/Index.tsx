@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Navbar from '@/components/Navbar';
 import InteractiveBackground from '@/components/InteractiveBackground';
@@ -7,7 +7,7 @@ import FeatureCard from '@/components/FeatureCard';
 import ScrollAnimation from '@/components/ScrollAnimation';
 import CyclingText from '@/components/CyclingText';
 import PhilosophyCarousel from '@/components/PhilosophyCarousel';
-import { Wallet, Sun, Shield, Database, BarChart3, Link, CircleDollarSign, Zap } from 'lucide-react';
+import { Wallet, Sun, Shield, Database, BarChart3, CircleDollarSign, Zap } from 'lucide-react';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -62,9 +62,11 @@ const Index = () => {
                     <Wallet className="h-5 w-5" />
                     <span className="text-lg">Connect Wallet</span>
                   </Button>
-                  <Button variant="outline" className="border-solana-green/50 text-solana-green hover:bg-solana-green/20 hover:text-white flex items-center gap-2 font-medium px-6 py-6 h-auto rounded-lg transition-all duration-300">
-                    <span className="text-lg">Learn More</span>
-                  </Button>
+                  <Button asChild variant="outline" className="border-solana-green/50 text-solana-green hover:bg-solana-green/20 hover:text-white flex items-center gap-2 font-medium px-6 py-6 h-auto rounded-lg transition-all duration-300">
+  <Link to="/how-it-works">
+    <span className="text-lg">Learn More</span>
+  </Link>
+</Button>
                 </div>
                 <p className="text-zap-gray mt-6 text-sm">
                   <span className="text-white font-semibold">TheZapCoin Vision:</span> Powering a future where sustainability pays—literally.

@@ -107,6 +107,17 @@
     transform: translateY(0);
   }
 
+  /* FeatureCard Pop Hover Effect */
+  .feature-card {
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform, box-shadow;
+  }
+  .feature-card:hover, .feature-card:focus-visible {
+    transform: scale(1.06) translateY(-4px);
+    box-shadow: 0 10px 32px 0 rgba(153,69,255,0.15), 0 2px 8px 0 rgba(20,241,149,0.12);
+    z-index: 1;
+  }
+
   .text-gradient {
     background: linear-gradient(135deg, #9945FF 0%, #14F195 100%);
     -webkit-background-clip: text;
