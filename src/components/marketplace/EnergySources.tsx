@@ -200,7 +200,7 @@ const EnergySources: React.FC<EnergySourcesProps> = ({ isLoading: externalLoadin
           <div className="flex gap-2">
             <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
               <DialogTrigger asChild>
-                <Button variant="outline" className="border-solana-green/50 text-solana-green hover:bg-solana-green/20">
+                <Button variant="outline" className="border-solana-green/50 text-solana-green hover:bg-solana-green/20 hover:text-white">
                   Register Source
                 </Button>
               </DialogTrigger>

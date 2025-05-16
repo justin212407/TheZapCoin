@@ -205,7 +205,7 @@ const BNPLLoans: React.FC<BNPLLoansProps> = ({ isLoading: externalLoading }) => 
         {connected && (
           <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
             <DialogTrigger asChild>
-              <Button variant="outline" className="border-solana-green/50 text-solana-green hover:bg-solana-green/20">
+              <Button variant="outline" className="border-solana-green/50 text-solana-green hover:bg-solana-green/20 hover:text-white">
                 New Loan
               </Button>
             </DialogTrigger>
